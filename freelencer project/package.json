@@ -1,0 +1,16 @@
+{
+  "name": "freelencer-project",
+  "version": "1.0.0",
+  "main": "findwork.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Aishu Zaman",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}
