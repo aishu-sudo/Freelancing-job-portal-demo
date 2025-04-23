@@ -5,17 +5,17 @@ import * as findwork from './findwork.js';
 hirefreelancer.loadHireTab();
 findwork.setupWorkTabs();
 const mediaFiles = [
-    { type: "image", src: "1.jpg" },
-    { type: "video", src: "2.mp4" },
-    { type: "image", src: "3.jpg" },
-    { type: "image", src: "4.jpg" },
-    { type: "image", src: "5.jpg" },
-    { type: "video", src: "6.mp4" },
-    { type: "image", src: "7.webp" },
-    { type: "image", src: "8.jpeg" },
-    { type: "image", src: "9.jpg" },
-    { type: "image", src: "10.avif" },
-    { type: "image", src: "11.jpg" }
+    { type: "image", src: "public/images/1.jpg" },
+    { type: "video", src: "public/videos/2.mp4" },
+    { type: "image", src: "public/images/3.jpg" },
+    { type: "image", src: "public/images/4.jpg" },
+    { type: "image", src: "public/images/5.jpg" },
+    { type: "video", src: "public/videos/6.mp4" },
+    { type: "image", src: "public/images/7.webp" },
+    { type: "image", src: "public/images/8.jpeg" },
+    { type: "image", src: "public/images/9.jpg" },
+    { type: "image", src: "public/images/10.avif" },
+    { type: "image", src: "public/images/11.jpg" }
 ];
 
 let currentIndex = 0;
