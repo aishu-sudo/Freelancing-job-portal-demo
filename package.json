@@ -3,14 +3,31 @@
   "version": "1.0.0",
   "main": "findwork.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "Aishu Zaman",
   "license": "ISC",
   "dependencies": {
-    "express": "^5.1.0"
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "csurf": "^1.10.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.14.1",
+    "path": "^0.12.7"
   },
-  "devDependencies": {},
-  "description": ""
+  "description": "Our website project demo it's work still running",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aishu-sudo/Freelancing-job-portal-demo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aishu-sudo/Freelancing-job-portal-demo/issues"
+  },
+  "homepage": "https://github.com/aishu-sudo/Freelancing-job-portal-demo#readme"
 }

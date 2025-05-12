@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Dashboard | Braintel</title>
+    <link rel="stylesheet" href="resources/styles/client-dashboard.css">
+</head>
+
+<body>
+    <div id="auth-check" style="display: none;"></div>
+
+    <header>
+        <h1>Welcome to Your Dashboard</h1>
+        <nav>
+            <button id="postProjectBtn">Post New Project</button>
+            <button id="viewProfileBtn">View Profile</button>
+            <button id="logoutBtn">Logout</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Success message -->
+        <div id="postedMessage" style="display: none;" class="alert success">
+            <p>Your project has been posted successfully!</p>
+        </div>
+
+        <!-- Projects List -->
+        <section id="projectsList">
+            <h2>Your Projects</h2>
+            <div id="projectsContainer"></div>
+        </section>
+
+        <!-- Notifications -->
+        <section id="notifications">
+            <h2>Notifications</h2>
+            <ul id="notificationsList">
+                <li>No new notifications</li>
+            </ul>
+        </section>
+
+        <!-- Messages -->
+        <section id="messages">
+            <h2>Messages</h2>
+            <div id="messagesContainer">
+                <p>No messages yet.</p>
+            </div>
+        </section>
+
+        <!-- Profile Summary -->
+        <section id="profileSummary">
+            <h2>Your Profile</h2>
+            <p><strong>Name:</strong> <span id="clientName">Loading...</span></p>
+            <p><strong>Email:</strong> <span id="clientEmail">Loading...</span></p>
+            <p><strong>Member Since:</strong> <span id="memberSince">Loading...</span></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Braintel. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="resources/scripts/client-dashboard.js"></script>
+</body>
+
+</html>
