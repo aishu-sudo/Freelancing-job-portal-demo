@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Client Dashboard</title>
+    <title>Freelancer Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         * {
@@ -197,56 +197,27 @@
             font-size: 12px;
             text-align: right;
         }
-        /* Client-specific stats */
-        
-        .stats-container {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-        
-        .stat-card {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            flex: 1;
-            min-width: 200px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-        }
-        
-        .stat-card h3 {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #0c2333;
-            margin-bottom: 15px;
-        }
-        
-        .stat-value {
-            font-size: 24px;
-            font-weight: bold;
-            color: #0c2333;
-        }
     </style>
 </head>
 
 <body>
 
     <div class="sidebar">
-        <h2><i class="fas fa-building"></i> Client</h2>
+        <h2><i class="fas fa-user-tie"></i> Freelancer</h2>
         <button onclick="loadSection('dashboard')" id="dashboardBtn" class="active"><i class="fas fa-chart-line"></i> Dashboard</button>
-        <button onclick="loadSection('myProjects')" id="myProjectsBtn"><i class="fas fa-briefcase"></i> My Projects</button>
-        <button onclick="loadSection('postProject')" id="postProjectBtn"><i class="fas fa-plus-circle"></i> Post Project</button>
-        <button onclick="loadSection('applicants')" id="applicantsBtn"><i class="fas fa-users"></i> Applicants</button>
-        <button onclick="loadSection('ratingsReviews')" id="ratingsReviewsBtn"><i class="fas fa-star"></i> Ratings & Reviews</button>
-        <button onclick="loadSection('messages')" id="messagesBtn"><i class="fas fa-envelope"></i> Messages</button>
+        <button onclick="loadSection('jobBrowsing')" id="jobBrowsingBtn"><i class="fas fa-briefcase"></i> Browse Jobs</button>
+        <button onclick="loadSection('applyJob')" id="applyJobBtn"><i class="fas fa-paper-plane"></i> Apply for Job</button>
+        <button onclick="loadSection('messages')" id="messagesBtn"><i class="fas fa-comments"></i> Messages</button>
+        <button onclick="loadSection('filterBySkill')" id="filterBySkillBtn"><i class="fas fa-cogs"></i> Jobs by Skill</button>
+        <button onclick="loadSection('filterByLanguage')" id="filterByLanguageBtn"><i class="fas fa-language"></i> Jobs by Language</button>
+        <button onclick="loadSection('topRated')" id="topRatedBtn"><i class="fas fa-star"></i> Top Rated Jobs</button>
+        <button onclick="loadSection('profile')" id="profileBtn"><i class="fas fa-user"></i> My Profile</button>
         <button onclick="logout()" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
     </div>
 
     <div id="mainContent">
         <div class="dashboard-header">
-            <h1>Client Dashboard</h1>
+            <h1>Freelancer Dashboard</h1>
             <div class="notification-container">
                 <div class="notification-bell" onclick="toggleNotifications()">
                     <i class="fas fa-bell"></i>
@@ -258,23 +229,23 @@
                         <button class="mark-all-read" onclick="markAllAsRead()">Mark all as read</button>
                     </div>
                     <div class="notification-item unread">
-                        <div class="notification-title">New Application</div>
-                        <div class="notification-message">John Doe has applied to your project "Website Redesign".</div>
+                        <div class="notification-title">New Job Match</div>
+                        <div class="notification-message">A new job matching your skills "Web Development" has been posted.</div>
                         <div class="notification-time">10 minutes ago</div>
                     </div>
                     <div class="notification-item unread">
-                        <div class="notification-title">Project Update</div>
-                        <div class="notification-message">Sarah has submitted the first draft for your review.</div>
+                        <div class="notification-title">Application Viewed</div>
+                        <div class="notification-message">Your application for "E-commerce Website" has been viewed by the client.</div>
                         <div class="notification-time">2 hours ago</div>
                     </div>
                     <div class="notification-item">
-                        <div class="notification-title">Payment Sent</div>
-                        <div class="notification-message">Your payment of $500 for "Mobile App Development" has been processed.</div>
+                        <div class="notification-title">Payment Received</div>
+                        <div class="notification-message">Payment of $250 for project "Logo Design" has been deposited to your account.</div>
                         <div class="notification-time">1 day ago</div>
                     </div>
                     <div class="notification-item">
                         <div class="notification-title">New Message</div>
-                        <div class="notification-message">You have a new message from DesignerPro regarding your project.</div>
+                        <div class="notification-message">You have a new message from Client A regarding your proposal.</div>
                         <div class="notification-time">2 days ago</div>
                     </div>
                 </div>
@@ -282,25 +253,20 @@
         </div>
 
         <div class="welcome-message" id="dashboardContent">
-            <h1>Welcome to your Client Dashboard</h1>
-            <p>Here you can manage your projects, review applicants, communicate with freelancers, and track progress. Use the sidebar to navigate between different sections.</p>
-
-            <div class="stats-container">
-                <div class="stat-card">
-                    <h3><i class="fas fa-briefcase" style="color: #1976d2;"></i> Active Projects</h3>
-                    <div class="stat-value">8</div>
+            <h1>Welcome to your Freelancer Dashboard</h1>
+            <p>Here you can browse available jobs, apply for positions, communicate with clients, and manage your profile. Use the sidebar to navigate between different sections.</p>
+            <div style="margin-top: 30px; display: flex; gap: 20px; flex-wrap: wrap;">
+                <div style="background: #e3f2fd; padding: 20px; border-radius: 8px; flex: 1; min-width: 200px;">
+                    <h3><i class="fas fa-briefcase" style="color: #1976d2;"></i> Available Jobs</h3>
+                    <p style="font-size: 24px; font-weight: bold; margin-top: 10px;">124</p>
                 </div>
-                <div class="stat-card">
-                    <h3><i class="fas fa-user-check" style="color: #388e3c;"></i> Hired Freelancers</h3>
-                    <div class="stat-value">12</div>
+                <div style="background: #e8f5e9; padding: 20px; border-radius: 8px; flex: 1; min-width: 200px;">
+                    <h3><i class="fas fa-check-circle" style="color: #388e3c;"></i> Applications Sent</h3>
+                    <p style="font-size: 24px; font-weight: bold; margin-top: 10px;">15</p>
                 </div>
-                <div class="stat-card">
-                    <h3><i class="fas fa-envelope" style="color: #ffa000;"></i> Unread Messages</h3>
-                    <div class="stat-value">5</div>
-                </div>
-                <div class="stat-card">
-                    <h3><i class="fas fa-file-alt" style="color: #9c27b0;"></i> New Applications</h3>
-                    <div class="stat-value">7</div>
+                <div style="background: #fff8e1; padding: 20px; border-radius: 8px; flex: 1; min-width: 200px;">
+                    <h3><i class="fas fa-comments" style="color: #ffa000;"></i> Unread Messages</h3>
+                    <p style="font-size: 24px; font-weight: bold; margin-top: 10px;">3</p>
                 </div>
             </div>
         </div>
@@ -335,20 +301,26 @@
                     document.getElementById('dashboardContent').style.display = 'block';
                     frame.style.display = 'none';
                     break;
-                case 'myProjects':
-                    frame.src = 'myProjects.html';
+                case 'jobBrowsing':
+                    frame.src = 'jobBrowse.html';
                     break;
-                case 'postProject':
-                    frame.src = 'postProject.html';
-                    break;
-                case 'applicants':
-                    frame.src = 'applicantsPage.html';
-                    break;
-                case 'ratingsReviews':
-                    frame.src = 'RatingsReviews.html';
+                case 'applyJob':
+                    frame.src = 'jobApply.html';
                     break;
                 case 'messages':
                     frame.src = 'Message.html';
+                    break;
+                case 'filterBySkill':
+                    frame.src = 'jobs.html?filter=skill';
+                    break;
+                case 'filterByLanguage':
+                    frame.src = 'jobs.html?filter=language';
+                    break;
+                case 'topRated':
+                    frame.src = 'jobs.html?filter=toprated';
+                    break;
+                case 'profile':
+                    frame.src = 'profile.html';
                     break;
                 default:
                     document.getElementById('dashboardContent').style.display = 'block';
@@ -377,7 +349,7 @@
             const dropdown = document.getElementById('notificationDropdown');
             const bell = document.querySelector('.notification-bell');
 
-            if (!bell.contains(event.target)) {
+            if (!bell.contains(event.target) && !dropdown.contains(event.target)) {
                 dropdown.classList.remove('show');
             }
         });
@@ -385,8 +357,6 @@
         function logout() {
             // Add logout functionality here
             alert('Logging out...');
-            // In a real application, you would redirect to logout URL
-            // window.location.href = '/logout';
         }
     </script>
 

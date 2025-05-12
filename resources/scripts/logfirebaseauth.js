@@ -1,4 +1,3 @@
-// auth.js
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
 import {
     getAuth,
@@ -7,28 +6,21 @@ import {
     sendPasswordResetEmail,
     signOut
 } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
-import {
-    getFirestore,
-    doc,
-    getDoc
-} from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 
-// Firebase Config
 const firebaseConfig = {
     apiKey: "AIzaSyD8RTED-Pc532DVq0JtL-s-85Tx7OCZXCQ",
     authDomain: "freelancing-job-portal-60da1.firebaseapp.com",
     projectId: "freelancing-job-portal-60da1",
-    storageBucket: "freelancing-job-portal-60da1.appspot.com", // ✅ FIXED .app to .appspot.com
+    storageBucket: "freelancing-job-portal-60da1.appspot.com",
     messagingSenderId: "300920992917",
     appId: "1:300920992917:web:8980b888330e4af189579c"
 };
 
-// Init
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// DOM Elements
 const loginForm = document.getElementById("login-form");
 const messageElement = document.getElementById("message");
 const forgotPasswordBtn = document.getElementById("forgot-password");
@@ -41,10 +33,10 @@ function showMessage(text, type = "error") {
     setTimeout(() => (messageElement.style.display = "none"), 4000);
 }
 
-// Login
 if (loginForm) {
     loginForm.addEventListener("submit", async(event) => {
         event.preventDefault();
+
         const email = document.getElementById("login-email").value.trim();
         const password = document.getElementById("login-password").value;
 
@@ -80,7 +72,6 @@ if (loginForm) {
     });
 }
 
-// Forgot Password
 if (forgotPasswordBtn) {
     forgotPasswordBtn.addEventListener("click", async() => {
         const email = document.getElementById("login-email").value.trim();
@@ -95,11 +86,15 @@ if (forgotPasswordBtn) {
     });
 }
 
-// Protect Routes
-onAuthStateChanged(auth, (user) => {
-    const protectedRoutes = ["clientDashboard.html", "freelancerDashboard.html"];
-    const currentPage = window.location.pathname.split("/").pop();
-    if (protectedRoutes.includes(currentPage) && !user) {
-        window.location.href = "login.html";
-    }
-});
+
+
+setTimeout(() => {
+    onAuthStateChanged(auth, (user) => {
+        const protectedRoutes = ["clientDashboard.html", "freelancerDashboard.html"];
+        const currentPage = window.location.pathname.split("/").pop();
+
+        if (protectedRoutes.includes(currentPage) && !user) {
+            window.location.href = "login.html";
+        }
+    });
+}, 500);
