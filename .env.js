@@ -1,3 +1,0 @@
-PORT=5501
-JWT_SECRET=your_strong_secret_here
-NODE_ENV=development
